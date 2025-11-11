@@ -1,0 +1,13 @@
+clc;
+clear all;
+close all;
+lamda = input('enter the value of the lamda: ');
+N = input('enter the number of elements: ');
+alfa = input('enter the progressive phase : ');
+d = input('enter the sepearation distance between elements: ');
+B=(2*pi/lamda);
+theta = pi/100:pi/100:2*pi;
+w=alfa+B*d.*cos(theta);
+AF=sinc(N*(w./2))./sinc(w./2);
+subplot(1,1,1);
+polar(theta,AF);
